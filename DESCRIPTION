@@ -3,10 +3,13 @@ Title: Minify HTML Documents
 Version: 0.1.0
 Authors@R: c(
     person("Bob", "Rudis", email = "bob@rud.is", role = c("aut", "cre"),
-           comment = c(ORCID = "0000-0001-5670-2640"))
+           comment = c(ORCID = "0000-0001-5670-2640")),
+    person("Wilson", "Lin", email = "wl@wilsonl.in", role = "aut",
+           comment = "Rust minify-html crate <https://github.com/wilsonzlin/minify-html>")
   )
 Maintainer: Bob Rudis <bob@rud.is>
-Description: Minifies HTML (no CSS or JavaScript yet) via the Rust minify-html crate.
+Description: Minifies HTML (no CSS or JavaScript yet) via the Rust minify-html crate 
+    (<https://github.com/wilsonzlin/minify-html>).
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)

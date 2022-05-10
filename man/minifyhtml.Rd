@@ -6,7 +6,7 @@
 \alias{minifyhtml-package}
 \title{Minify HTML Documents}
 \description{
-Minifies HTML (no CSS or JavaScript yet) via the Rust minify-html crate.
+Minifies HTML (no CSS or JavaScript yet) via the Rust minify-html crate (\url{https://github.com/wilsonzlin/minify-html}).
 }
 \seealso{
 Useful links:
