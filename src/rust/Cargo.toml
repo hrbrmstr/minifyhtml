@@ -8,3 +8,4 @@ crate-type = [ 'staticlib' ]
 
 [dependencies]
 extendr-api = '*'
+minify-html = "0.8.0"
