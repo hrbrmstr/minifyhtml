@@ -32,7 +32,7 @@ hrbrpkghelpr::install_block()
 ## Usage
 
 ```{r lib-ex}
-library(imagecompare)
+library(minifyhtml)
 
 # current version
 packageVersion("minifyhtml")
@@ -40,8 +40,6 @@ packageVersion("minifyhtml")
 ```
 
 ```{r example}
-library(minifyhtml)
-
 '
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -64,7 +62,7 @@ library(minifyhtml)
 </html>
 ' -> src
 
-cat(minify(src, minify_css = TRUE, minify_js = TRUE))
+cat(minify(src))
 ```
 
 ```{r larger-example}

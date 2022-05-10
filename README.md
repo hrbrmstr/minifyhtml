@@ -32,7 +32,7 @@ NOTE: To use the ‘remotes’ install options you will need to have the
 ## Usage
 
 ``` r
-library(imagecompare)
+library(minifyhtml)
 
 # current version
 packageVersion("minifyhtml")
@@ -40,8 +40,6 @@ packageVersion("minifyhtml")
 ```
 
 ``` r
-library(minifyhtml)
-
 '
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -64,7 +62,7 @@ library(minifyhtml)
 </html>
 ' -> src
 
-cat(minify(src, minify_css = TRUE, minify_js = TRUE))
+cat(minify(src))
 ## <html xmlns=http://www.w3.org/1999/xhtml><meta charset=UTF-8><meta content=width=device-width,initial-scale=1 name=viewport><style>* { color: black; }</style><title>TITTLE</title><body><p>Some tex</p><script>console.log("This is a console log message.");</script>
 ```
 
@@ -90,12 +88,12 @@ cat(substr(minify(src), 1, 300))
 |:-----|---------:|-----:|-----:|-----:|------------:|-----:|---------:|-----:|
 | Rust |        2 | 0.02 | 7895 | 0.48 |          10 | 0.05 |        4 | 0.03 |
 | D    |       20 | 0.19 |  221 | 0.01 |          52 | 0.28 |        0 | 0.00 |
-| Rmd  |        1 | 0.01 |   33 | 0.00 |          22 | 0.12 |       32 | 0.23 |
+| Rmd  |        1 | 0.01 |   32 | 0.00 |          21 | 0.11 |       32 | 0.23 |
 | R    |        3 | 0.03 |   30 | 0.00 |           5 | 0.03 |       31 | 0.22 |
 | JSON |       25 | 0.24 |   25 | 0.00 |           0 | 0.00 |        0 | 0.00 |
 | TOML |        1 | 0.01 |   13 | 0.00 |           2 | 0.01 |        0 | 0.00 |
 | C    |        1 | 0.01 |    4 | 0.00 |           2 | 0.01 |        2 | 0.01 |
-| SUM  |       53 | 0.50 | 8221 | 0.50 |          93 | 0.50 |       69 | 0.50 |
+| SUM  |       53 | 0.50 | 8220 | 0.50 |          92 | 0.50 |       69 | 0.50 |
 
 clock Package Metrics for minifyhtml
 
