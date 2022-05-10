@@ -1,5 +1,7 @@
 [package]
 name = 'minifyhtml'
+description = "Extremely fast and smart HTML + JS + CSS minifier"
+license = "MIT"
 version = '0.1.0'
 edition = '2018'
 
@@ -9,3 +11,5 @@ crate-type = [ 'staticlib' ]
 [dependencies]
 extendr-api = '*'
 minify-html = "0.8.0"
+crossbeam = { version = "0.7", optional = true }
+esbuild-rs = { version = "0.13.8", optional = true }

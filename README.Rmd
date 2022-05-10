@@ -1,44 +1,87 @@
 ---
-output: github_document
+output: rmarkdown::github_document
+editor_options: 
+  chunk_output_type: console
 ---
-
-<!-- README.md is generated from README.Rmd. Please edit that file -->
-
-```{r, include = FALSE}
-knitr::opts_chunk$set(
-  collapse = TRUE,
-  comment = "#>",
-  fig.path = "man/figures/README-",
-  out.width = "100%"
-)
+```{r pkg-knitr-opts, include=FALSE}
+hrbrpkghelpr::global_opts()
 ```
 
-# minifyhtml
+```{r description, results='asis', echo=FALSE, cache=FALSE}
+hrbrpkghelpr::yank_title_and_description()
+```
 
-<!-- badges: start -->
-<!-- badges: end -->
+## NOTE
 
-The goal of minifyhtml is to ...
+Minifying CSS and JavaScript requires another Rust module with some features enabled in `minify-html` that doesn't seem to work on arm64 Macs (yet). Ima figure it out and get that working at some point.
+
+## What's Inside The Tin
+
+The following functions are implemented:
+
+```{r ingredients, results='asis', echo=FALSE, cache=FALSE}
+hrbrpkghelpr::describe_ingredients()
+```
 
 ## Installation
 
-You can install the development version of minifyhtml from [GitHub](https://github.com/) with:
-
-``` r
-# install.packages("devtools")
-devtools::install_github("hrbrmstr/minifyhtml")
+```{r install-ex, results='asis', echo=FALSE, cache=FALSE}
+hrbrpkghelpr::install_block()
 ```
 
-## Example
+## Usage
 
-This is a basic example which shows you how to solve a common problem:
+```{r lib-ex}
+library(imagecompare)
+
+# current version
+packageVersion("minifyhtml")
+
+```
 
 ```{r example}
 library(minifyhtml)
 
+'
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <!-- COMMENT -->
+  <style>
+    * { color: black; }
+  </style>
+  <title>TITTLE</title>
+  </head>
+  <body>
+    <p>
+       Some tex
+    </p>
+    <script>
+      console.log("This is a console log message.");
+    </script>
+  </body>
+</html>
+' -> src
+
+cat(minify(src, minify_css = TRUE, minify_js = TRUE))
+```
+
+```{r larger-example}
 src <- httr::content(httr::GET("https://rud.is"), as = "text")
 
 cat(substr(src, 1, 300))
 
 cat(substr(minify(src), 1, 300))
 ```
+
+## minifyhtml Metrics
+
+```{r cloc, echo=FALSE}
+cloc::cloc_pkg_md()
+```
+
+## Code of Conduct
+
+Please note that this project is released with a Contributor Code of Conduct. 
+By participating in this project you agree to abide by its terms.

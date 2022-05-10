@@ -8,8 +8,5 @@
 #' @useDynLib minifyhtml, .registration = TRUE
 NULL
 
-#' Return string `"Hello world!"` to R.
-#' @param text text
-#' @export
-minify <- function(text) .Call(wrap__minify, text)
+internal_minify <- function(html, do_not_minify_doctype, ensure_spec_compliant_unquoted_attribute_values, keep_closing_tags, keep_html_and_head_opening_tags, keep_spaces_between_attributes, keep_comments, minify_css, minify_js, remove_bangs, remove_processing_instructions) .Call(wrap__internal_minify, html, do_not_minify_doctype, ensure_spec_compliant_unquoted_attribute_values, keep_closing_tags, keep_html_and_head_opening_tags, keep_spaces_between_attributes, keep_comments, minify_css, minify_js, remove_bangs, remove_processing_instructions)
 
